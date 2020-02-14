@@ -26,9 +26,9 @@ class UserController extends Controller
             'email' => 'required|email|unique:tbl_users',
             //'email'=> 'required|email|unique:tbl_users,email',
             'login_name' => 'required',
-            'password' => ['required', 
-            'min:6', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/'],
-            //'password' => 'required',
+            'password' => 'required | regex:/^.*(?=.{3,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#@%])/',
+            //'password' => ['required', 
+            //'min:6', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/'],
             'operatorLevel' => 'required',
             'status' => 'required',
         ]);

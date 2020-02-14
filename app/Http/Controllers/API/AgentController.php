@@ -26,20 +26,17 @@ class AgentController extends Controller
            //dd('web wrong')
        //}
              $validator = Validator::make($request->all(), [
-                'code' => 'required',
+                'code' => 'required | numeric |digits: 4',
                 'name' => 'required',
                 'addressI' => 'required',
                 'addressII' => 'required',
                 'addressIII' => 'required',
                 'addressIV' => 'required',
                 'postcode' => 'required|size:6',
-                //'website' => 'required|website|unique:tbl_agents',
+                'website' =>  'required |regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
                 'telephone_no' => 'required|regex:/(07)[0-9]{9}/',
                 'fax_no' => 'required|regex:/(01)[0-9]{9}/',
-                //'letter_head'=> 'required|regex:/^data:image/'
                 'letter_head' => 'required',
-                //'logo_header_file' =>'required|file|max:1024',
-                //'logo_header_file' =>'required|image';
                 'logo_header_file' => 'required',
                 'blank_lines' => 'required',
                 'status' => 'required',

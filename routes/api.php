@@ -23,3 +23,10 @@ Route::post('agent/{agentId}', 'API\AgentController@updateAgent')->name('updateA
 Route::delete('agent/{agentId}', 'API\AgentController@deleteAgent')->name('deleteAgent');
 
 Route::get('user/{id}', 'API\UserController@getUser')->name('getUser');
+
+Route::post('introducer', 'API\IntroducerController@storeIntroducer')->name('storeIntroducer');
+Route::post('introducer/{introducerId}', 'API\IntroducerController@updateIntroducer')->name('updateIntroducer');
+Route::delete('introducer/{introducerId}', 'API\IntroducerController@deleteIntroducer')->name('deleteIntroducer');
+
+Route::get('introducer/{id}', 'API\IntroducerController@getIntroducer')->name('getIntroducer');
+
